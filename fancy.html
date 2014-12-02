@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title>Koosh</title>
+    <!-- probably overkill -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  </head>
+<body>
+<div id="quotes"></div>
+<script>
+var quotes = [
+  "Koosh drinks his own pee.",
+  "It is better to play with a band, than to play with yourself.",
+  "Joshua!",
+  "We can't hear the flutes."
+];
+for (var x in quotes) {
+  var quote = quotes[x];
+  var div = $("<div></div>").hide().append(quote);
+  $("#quotes").append(div)
+}
+var offset = Math.floor(Math.random() * quotes.length)
+function tick() {
+  var jqOffset = offset + 1
+  $("#quotes div:nth-child(" + jqOffset + ")").fadeIn(400).delay(1000).fadeOut(400, tick);
+  offset++;
+  if (offset >= quotes.length) {
+    offset = 0;
+  }
+}
+tick()
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title>Koosh</title>
+    <!-- probably overkill -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  </head>
+<body>
+<div id="quotes"></div>
+<script>
+var quotes = [
+  "Koosh drinks his own pee.",
+  "It is better to play with a band, than to play with yourself.",
+  "Joshua!",
+  "We can't hear the flutes."
+];
+var offset = Math.floor(Math.random() * quotes.length);
+$( "#quotes" ).text(quotes[offset])
+</script>
+</body>
+</html>
